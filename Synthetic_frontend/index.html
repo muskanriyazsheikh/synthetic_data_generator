@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Synthetic Data Project</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo">Synthetic Data ML</div>
+        <ul class="nav-links">
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="dataset.html">Dataset</a></li>
+            <li><a href="results.html">Results</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <!-- Left Side: Content -->
+        <div class="hero-content">
+            <h1>Synthetic Data: Solving Data Scarcity in ML</h1>
+            <p>Learn how synthetic data can help improve machine learning models by balancing datasets and generating new data points.</p>
+            
+            <!-- File Upload -->
+            <div class="upload-container" id="uploadContainer">
+                <input type="file" id="fileInput" accept=".csv, .json">
+                <label for="fileInput">Drag & Drop or Click to Upload Dataset</label>
+            </div>
+
+            <button id="visualizeBtn" onclick="goToDataset()">Visualize Dataset</button>
+        </div>
+
+        <!-- Right Side: User Input -->
+        <div class="user-input">
+            <h2>Generate Data</h2>
+            <p>Enter how many rows of synthetic data you want:</p>
+            <div class="input-container">
+                <input type="number" id="dataRows" placeholder="Enter number of rows">
+                <button onclick="generateData()">Generate</button>
+            </div>
+            <p id="responseMessage"></p>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <h2>Why Synthetic Data?</h2>
+        <div class="feature-grid">
+            <div class="feature-card">
+                <h3>⚡ Balance Datasets</h3>
+                <p>Fix class imbalance issues and improve model performance with generated samples.</p>
+            </div>
+            <div class="feature-card">
+                <h3>🔒 Privacy Friendly</h3>
+                <p>Use synthetic data when real data is sensitive, ensuring compliance with privacy laws.</p>
+            </div>
+            <div class="feature-card">
+                <h3>📊 Scalable</h3>
+                <p>Generate large volumes of data for training ML models quickly and efficiently.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="steps">
+        <h2>How It Works</h2>
+        <div class="step-container">
+            <div class="step">
+                <span>1</span>
+                <p>Upload your dataset</p>
+            </div>
+            <div class="step">
+                <span>2</span>
+                <p>Choose how many synthetic rows to generate</p>
+            </div>
+            <div class="step">
+                <span>3</span>
+                <p>Visualize dataset distribution before & after</p>
+            </div>
+            <div class="step">
+                <span>4</span>
+                <p>Download and use your enhanced dataset</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="cta">
+        <h2>Ready to Supercharge Your ML Models?</h2>
+        <p>Start generating synthetic data today and see the difference!</p>
+        <a href="dataset.html" class="btn">Get Started</a>
+    </section>
+     <script>
+function goToDataset() {
+    fetch("http://127.0.0.1:5000/api/datasets", {
+        headers: {
+            "Authorization": "Bearer YOUR_TOKEN_HERE"
+        }
+    })
+    .then(res => res.json())
+    .then(data => {
+        console.log(data.datasets);
+        // TODO: render datasets in the page
+    })
+    .catch(err => console.error(err));
+}
+</script>
+    <script src="script.js"></script>
+</body>
+</html>

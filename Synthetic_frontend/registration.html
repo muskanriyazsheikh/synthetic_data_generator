@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register - Synthetic Data Project</title>
+  <link rel="stylesheet" href="register.css">
+</head>
+<body>
+
+    <style>
+
+
+/* General Styles */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(to bottom, #f0f4f8, #ffffff);
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+/* Header */
+.header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.header .logo {
+  width: 80px;
+  height: 80px;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.header h1 {
+  font-size: 2rem;
+  margin-bottom: 5px;
+}
+
+.header p {
+  font-size: 0.9rem;
+  color: #555;
+}
+
+/* Form Container */
+.form-container {
+  background: #fff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+}
+
+.form-container h2 {
+  margin-bottom: 5px;
+  font-size: 1.5rem;
+}
+
+.form-container p {
+  margin-bottom: 20px;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+/* Form Groups */
+.form-group {
+  text-align: left;
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: #1e3a8a;
+  box-shadow: 0 0 5px rgba(30,58,138,0.3);
+}
+
+/* Button */
+.btn {
+  width: 100%;
+  padding: 12px;
+  background: linear-gradient(to right, #3b82f6, #1e3a8a);
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background 0.3s;
+}
+
+.btn:hover {
+  background: linear-gradient(to right, #2563eb, #1e40af);
+}
+
+/* Login Link */
+.login-link {
+  margin-top: 20px;
+  font-size: 0.9rem;
+}
+
+.login-link a {
+  color: #3b82f6;
+  text-decoration: none;
+}
+
+.login-link a:hover {
+  text-decoration: underline;
+}
+
+/* Footer */
+footer {
+  margin-top: 30px;
+  text-align: center;
+  font-size: 0.8rem;
+  color: #888;
+}
+
+
+    </style>
+
+
+<script>
+
+const registerForm = document.getElementById('registerForm');
+
+registerForm.addEventListener('submit', function(e){
+    e.preventDefault();
+    const username = document.getElementById('username').value;
+    const email = document.getElementById('email').value;
+    const password = document.getElementById('password').value;
+
+    alert(`Account created!\nUsername: ${username}\nEmail: ${email}`);
+    window.location.href = "login.html"; // Redirect to login page
+});
+
+
+
+</script>
+
+
+  <!-- Header -->
+  <header class="header">
+    <img src="logo.png" alt="Logo" class="logo">
+    <h1>Create Account</h1>
+    <p>Join thousands of businesses using our billing platform</p>
+  </header>
+
+  <!-- Registration Form -->
+  <main class="form-container">
+    <h2>Register</h2>
+    <p>Enter your details to create your account</p>
+
+    <form id="registerForm">
+      <!-- Username -->
+      <div class="form-group">
+        <label for="username">Username</label>
+        <input type="text" id="username" placeholder="Enter your username" required>
+      </div>
+
+      <!-- Email -->
+      <div class="form-group">
+        <label for="email">Email Address</label>
+        <input type="email" id="email" placeholder="Enter your email" required>
+      </div>
+
+      <!-- Password -->
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" placeholder="Create a strong password" required>
+      </div>
+
+      <button type="submit" class="btn">Register</button>
+    </form>
+
+    <p class="login-link">
+      Already have an account? <a href="login.html">Sign in here</a>
+    </p>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>Trusted by 10,000+ businesses worldwide</p>
+    <p>Your data is encrypted and secure</p>
+  </footer>
+
+  <script src="register.js"></script>
+</body>
+</html>

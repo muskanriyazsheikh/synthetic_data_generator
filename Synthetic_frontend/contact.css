@@ -1,0 +1,131 @@
+/* General */
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f8fbfd;
+  color: #333;
+}
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #1e3a8a;
+  padding: 15px 30px;
+  border-radius: 0 0 12px 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.navbar .logo {
+  color: white;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links li a {
+  color: white;
+  font-weight: 600;
+  text-decoration: none;
+  padding: 5px 10px;
+  border-radius: 6px;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.nav-links li a:hover,
+.nav-links li a.active {
+  background: #2563eb;
+  transform: scale(1.05);
+}
+
+/* Header */
+.header {
+  text-align: center;
+  padding: 40px 20px;
+  background: linear-gradient(to right, #6c5ce7, #00cec9);
+  color: white;
+}
+.header h1 {
+  margin: 0;
+  font-size: 36px;
+}
+
+/* Contact Container */
+.contact-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  padding: 50px;
+  max-width: 1100px;
+  margin: auto;
+}
+.contact-form, .contact-info {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+.contact-form h2, .contact-info h2 {
+  margin-bottom: 20px;
+}
+
+/* Form */
+.form-group {
+  margin-bottom: 20px;
+}
+label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: bold;
+}
+input, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  outline: none;
+  transition: border 0.3s;
+}
+input:focus, textarea:focus {
+  border-color: #6c5ce7;
+}
+
+/* Button */
+.btn {
+  display: inline-block;
+  background: #6c5ce7;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.btn:hover {
+  background: #00cec9;
+}
+
+/* Contact Info */
+.contact-info p {
+  margin: 10px 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .contact-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 15px;
+  background: #2d3436;
+  color: white;
+}

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Results - Synthetic Data</title>
+  <link rel="stylesheet" href="results.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="logo">Synthetic Data ML</div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="dataset.html">Dataset</a></li>
+ 
+      <li><a href="results.html" class="active">Results</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Header -->
+  <header class="header">
+    <h1>Results</h1>
+    <p>Performance comparison of ML models with vs without synthetic data</p>
+  </header>
+
+  <!-- Metric Cards -->
+  <section class="metrics">
+    <div class="card">
+      <h3>Accuracy</h3>
+      <p>85% → <span class="highlight">92%</span></p>
+    </div>
+    <div class="card">
+      <h3>F1-Score</h3>
+      <p>78% → <span class="highlight">88%</span></p>
+    </div>
+    <div class="card">
+      <h3>Precision</h3>
+      <p>80% → <span class="highlight">90%</span></p>
+    </div>
+    <div class="card">
+      <h3>Recall</h3>
+      <p>75% → <span class="highlight">89%</span></p>
+    </div>
+  </section>
+
+  <!-- Charts -->
+  <section class="charts">
+    <div class="chart-container">
+      <canvas id="barChart"></canvas>
+    </div>
+  </section>
+
+  <!-- Navigation Buttons -->
+  <div class="buttons">
+    <a href="index.html" class="btn">Back to Home</a>
+    <a href="about.html" class="btn">About Page</a>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Synthetic Data Project</p>
+  </footer>
+
+  <!-- Chart Script -->
+  <script>
+    const ctx = document.getElementById('barChart').getContext('2d');
+    new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: ['Accuracy', 'F1-Score', 'Precision', 'Recall'],
+        datasets: [
+          {
+            label: 'Original Dataset',
+            data: [85, 78, 80, 75],
+            backgroundColor: '#ff7675'
+          },
+          {
+            label: 'With Synthetic Data',
+            data: [92, 88, 90, 89],
+            backgroundColor: '#55efc4'
+          }
+        ]
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          legend: { position: 'top' },
+          tooltip: { enabled: true }
+        },
+        scales: {
+          y: { beginAtZero: true, max: 100 }
+        }
+      }
+    });
+  </script>
+
+</body>
+</html>
